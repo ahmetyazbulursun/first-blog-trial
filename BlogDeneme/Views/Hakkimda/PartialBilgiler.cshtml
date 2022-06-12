@@ -1,0 +1,40 @@
+﻿@using BlogDeneme.Models.Entity
+@model List<Tbl_Hakkimda>
+
+<div class="blog-wrapper section-padding-100-0 clearfix">
+    <div class="container">
+        @foreach (var x in Model)
+        {
+            <div class="row align-items-end">
+                <!-- Single Blog Area -->
+                <div class="col-12 col-lg-4">
+                    <div class="single-blog-area clearfix mb-100">
+                        <!-- Blog Content -->
+                        <div class="single-blog-content">
+                            <div class="line"></div>
+                            <a class="post-tag">Hakkımda</a>
+                            <h4><a class="post-headline">@x.BASLIK</a></h4>
+                            <p class="mb-3">@x.YAZI1</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Blog Area -->
+                <div class="col-12 col-lg-4">
+                    <div class="single-blog-area clearfix mb-100">
+                        <!-- Blog Content -->
+                        <div class="single-blog-content">
+                            <p class="mb-3">@x.YAZI2</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Blog Area -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-catagory-area clearfix mb-100">
+                        <img src="@x.FOTOGRAF" alt="">
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

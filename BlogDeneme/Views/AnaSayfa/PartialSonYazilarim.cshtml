@@ -1,0 +1,28 @@
+﻿@using BlogDeneme.Models.Entity
+@model List<Tbl_Blog>
+
+<div class="sidebar-widget-area mt-5">
+    <h5 class="title" style="font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';">Son Yazılarım</h5>
+
+    <div class="widget-content">
+        @foreach (var x in Model)
+        {
+            <!-- Single Blog Post -->
+            <div class="single-blog-post d-flex align-items-center widget-post">
+                <!-- Post Thumbnail -->
+                <div class="post-thumbnail">
+                    <img src="@x.RESIM" alt="">
+                </div>
+                <!-- Post Content -->
+                <div class="post-content">
+                    <a href="#" class="post-tag">@x.Tbl_BlogKategori.AD</a>
+                    <h4><a href="/AnaSayfa/BlogDetay/@x.ID" class="post-headline" style="font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';">@x.BASLIK</a></h4>
+                    <div class="post-meta">
+                        <p><a>@(((DateTime)x.TARIH).ToString("dd.MM.yyy"))</a></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

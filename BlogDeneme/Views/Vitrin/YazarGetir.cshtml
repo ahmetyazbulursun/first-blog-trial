@@ -1,0 +1,36 @@
+﻿@model BlogDeneme.Models.Entity.Tbl_Yazar
+
+@{
+    ViewBag.Title = "YazarGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("YazarGuncelle", "Vitrin", FormMethod.Post))
+{
+<div>
+    <div class="row">
+        <div>
+            @Html.HiddenFor(x=>x.ID)
+        </div>
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Yazar:</label>
+            @Html.TextBoxFor(x => x.ADSOYAD, new { @class = "form-control ml-1", @placeholder = "Yazar adı...",  @required = "required" })
+        </div>
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Resim:</label>
+            @Html.TextBoxFor(x => x.RESIM, new { @class = "form-control", @placeholder = "Link", @required = "required" })
+        </div>
+    </div>
+
+    <div class="input-group mb-3">
+        <label class="input-group-text text-dark">Detay:</label>
+        @Html.TextAreaFor(x => x.ICERIK, new { rows = "10", cols = "10", @class = "form-control ml-1", @placeholder = "Detay...", @required = "required" })
+    </div>
+
+    <div class="clearfix">
+        <div class="float-right">
+            <button class="btn btn-outline-success">Güncelle</button>
+        </div>
+    </div>
+</div>
+}

@@ -1,0 +1,40 @@
+﻿@model BlogDeneme.Models.Entity.Tbl_Mesajlar
+
+@{
+    ViewBag.Title = "MesajDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <div class="row">
+        <div>
+            @Html.HiddenFor(x => x.ID)
+        </div>
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Ad-Soyad:</label>
+            @Html.TextBoxFor(x => x.ADSOYAD, new { @class = "form-control ml-1", @readonly="readonly" })
+        </div>
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Mail:</label>
+            @Html.TextBoxFor(x => x.MAIL, new { @class = "form-control ml-2", @readonly = "readonly" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Konu:</label>
+            @Html.TextBoxFor(x => x.KONU, new { @class = "form-control ml-5", @readonly = "readonly" })
+        </div>
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Tarih:</label>
+            @Html.TextBoxFor(x => x.TARIH, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+    </div>
+
+    <div class="input-group mb-3">
+        <label class="input-group-text text-dark">Mesaj:</label>
+        @Html.TextAreaFor(x => x.MESAJ, new { rows = "10", cols = "10", @class = "form-control ml-5", @readonly = "readonly" })
+    </div>
+</div>
+
+

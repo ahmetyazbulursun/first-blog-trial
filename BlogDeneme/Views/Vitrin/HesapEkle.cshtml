@@ -1,0 +1,32 @@
+﻿@model BlogDeneme.Models.Entity.Tbl_SosyalMedya
+
+@{
+    ViewBag.Title = "HesapEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<form class="form-group" method="post">
+    <div class="row">
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Adı:</label>
+            @Html.TextBoxFor(x => x.AD, new { @class = "form-control ml-2", @placeholder = "Örn(Instagram, YouTube...)", @required = "required" })
+        </div>
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Hesap:</label>
+            @Html.DropDownListFor(x => x.Tbl_SosyalMedyaIkon.ID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="input-group mb-3">
+        <label class="input-group-text text-dark">Link:</label>
+        @Html.TextBoxFor(x => x.LINK, new { @class = "form-control", @placeholder = "Link...", @required = "required" })
+    </div>
+
+    <div class="clearfix">
+        <div class="float-right">
+            <button class="btn btn-outline-info">Hesap Ekle</button>
+        </div>
+    </div>
+</form>

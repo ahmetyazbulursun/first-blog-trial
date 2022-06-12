@@ -1,0 +1,24 @@
+﻿@using BlogDeneme.Models.Entity
+@model List<Tbl_BlogYorum>
+
+<div class="comment_area clearfix mt-70">
+    <h5 class="title">Yorumlar</h5>
+
+    <ol>
+        <!-- Single Comment Area -->
+        <li class="single_comment_area">
+            <!-- Comment Content -->
+            @foreach (var x in Model)
+            {
+                <div class="comment-content d-flex">
+                    <!-- Comment Meta -->
+                    <div class="comment-meta">
+                        <a class="post-date">@(((DateTime)x.TARIH).ToString("dd.MM.yyy"))</a>
+                        <p><a href="#" class="post-author">@x.ADSOYAD</a></p>
+                        <p>@x.YORUM</p>
+                    </div>
+                </div>
+            }
+        </li>
+    </ol>
+</div>

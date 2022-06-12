@@ -1,0 +1,14 @@
+﻿@using BlogDeneme.Models.Entity
+@model List<Tbl_BlogKategori>
+
+<div class="sidebar-widget-area">
+    <h5 class="title">Kategoriler</h5>
+    <div class="widget-content">
+        <ul class="tags">
+            @foreach (var x in Model)
+            {
+                <li><a href="/AnaSayfa/Kategori/@x.ID">@x.AD</a></li>
+            }
+        </ul>
+    </div>
+</div>

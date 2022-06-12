@@ -1,0 +1,44 @@
+﻿@model BlogDeneme.Models.Entity.Tbl_Hakkimda
+
+@{
+    ViewBag.Title = "HakkimdaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("HakkimdaGuncelle", "Vitrin", FormMethod.Post))
+{
+    <div>
+        <div class="row">
+            <div>
+                @Html.HiddenFor(x => x.ID)
+            </div>
+
+            <div class="input-group mb-3 col">
+                <label class="input-group-text text-dark">Başlık:</label>
+                @Html.TextBoxFor(x => x.BASLIK, new { @class = "form-control", @placeholder = "Başlık...", @required="required" })
+            </div>
+            <div class="input-group mb-3 col">
+                <label class="input-group-text text-dark">Fotoğraf:</label>
+                @Html.TextBoxFor(x => x.FOTOGRAF, new { @class = "form-control", @placeholder = "Link...", @required = "required" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-group mb-3 col">
+                <label class="input-group-text text-dark">Yazı 1:</label>
+                @Html.TextAreaFor(x => x.YAZI1, new { rows = "10", cols = "10", @class = "form-control ml-1", @placeholder = "Yazı 1...", @required = "required" })
+            </div>
+            <div class="input-group mb-3 col">
+                <label class="input-group-text text-dark">Yazı 2:</label>
+                @Html.TextAreaFor(x => x.YAZI2, new { rows = "10", cols = "10", @class = "form-control ml-1", @placeholder = "Yazı 2...", @required = "required" })
+            </div>
+        </div>
+
+        <div class="clearfix">
+            <div class="float-right">
+                <button class="btn btn-outline-success">Güncelle</button>
+            </div>
+        </div>
+    </div>
+}
+

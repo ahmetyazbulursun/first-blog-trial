@@ -1,0 +1,30 @@
+﻿@model BlogDeneme.Models.Entity.Tbl_BlogYorum
+
+<div class="post-a-comment-area mt-70">
+    <h5>Yorum Yaz</h5>
+    <!-- Reply Form -->
+    <form method="post">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="group">
+                    <input type="text" name="ADSOYAD" id="name" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Ad-Soyad</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="group">
+                    <textarea name="YORUM" id="message" required></textarea>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Yorum</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn original-btn">Yorum Yap</button>
+            </div>
+        </div>
+    </form>
+</div>
+

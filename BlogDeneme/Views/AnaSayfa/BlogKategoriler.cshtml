@@ -1,0 +1,12 @@
+﻿@using BlogDeneme.Models.Entity
+@model List<Tbl_BlogKategori>
+
+<li>
+    <a href="#">Kategoriler</a>
+    <ul class="dropdown">
+        @foreach(var x in Model)
+        { 
+            <li><a href="/AnaSayfa/Kategori/@x.ID">@x.AD</a></li>
+        }
+    </ul>
+</li>

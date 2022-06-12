@@ -1,0 +1,42 @@
+﻿@using BlogDeneme.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Tbl_Blog>
+
+@foreach (var x in Model)
+{
+    <div class="single-blog-area blog-style-2 mb-50 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1000ms">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                <div class="single-blog-thumbnail">
+                    <a href="/AnaSayfa/BlogDetay/@x.ID">
+                        <img src="@x.RESIM" alt="">
+                    </a>
+                    <div class="post-date">
+                        <a><span>@(((DateTime)x.TARIH).ToString("dd.MM.yyy"))</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <!-- Blog Content -->
+                <div class="single-blog-content">
+                    <div class="line"></div>
+                    <a href="/AnaSayfa/Kategori/@x.Tbl_BlogKategori.ID" class="post-tag">@x.Tbl_BlogKategori.AD</a>
+                    <h4><a href="/AnaSayfa/BlogDetay/@x.ID" class="post-headline" style="font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';">@x.BASLIK</a></h4>
+                    <p>@x.BILGILENDIRME.Substring(0, x.BILGILENDIRME.Substring(0, 50).LastIndexOf(" "))...</p>
+                    <div class="post-meta">
+                        <p><a href="/Hakkimda/Index">@x.YAZAR</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }), new PagedListRenderOptions
+    {
+        LiElementClasses = new List<string>
+        { "page-link"}
+    })
+</div>

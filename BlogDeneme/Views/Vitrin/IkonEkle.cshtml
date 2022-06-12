@@ -1,0 +1,29 @@
+﻿@model BlogDeneme.Models.Entity.Tbl_SosyalMedyaIkon
+
+@{
+    ViewBag.Title = "IkonEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<form class="form-group" method="post">
+    <div class="row">
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Ad:</label>
+            @Html.TextBoxFor(x => x.AD, new { @class = "form-control", @placeholder = "Örn(Instagram, YouTube...)", @required = "required" })
+            @Html.ValidationMessageFor(x => x.AD, "", new { @style = "color: red;", @class = "form-control-text" })
+        </div>
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">İkon Kodu:</label>
+            @Html.TextBoxFor(x => x.IKON, new { @class = "form-control", @placeholder = "Örn(fa fa-instagram, fa fa-youtube)", @required = "required" })
+            @Html.ValidationMessageFor(x => x.IKON, "", new { @style = "color: red;", @class = "form-control-text" })
+        </div>
+    </div>
+
+    <div class="clearfix">
+        <div class="float-right">
+            <button class="btn btn-outline-info">İkon Ekle</button>
+        </div>
+    </div>
+</form>

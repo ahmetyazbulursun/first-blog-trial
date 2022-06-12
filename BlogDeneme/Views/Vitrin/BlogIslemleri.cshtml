@@ -1,0 +1,54 @@
+﻿@using BlogDeneme.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Tbl_Blog>
+
+@{
+    ViewBag.Title = "BlogIslemleri";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="clearfix">
+    <div class="float-left">
+        @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("BlogIslemleri", new { sayfa }), new PagedListRenderOptions
+        {
+            LiElementClasses = new List<string>
+            { "page-link"}
+        })
+    </div>
+
+    <div class="float-right">
+        <a href="/Vitrin/BlogEkle" class="btn btn-info">Yeni Blog Ekle</a>
+    </div>
+    <div class="float-right">
+        <a href="/Vitrin/TumYorumlar" class="btn btn-warning mr-1">Tüm Yorumlar</a>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+        <tr align="center">
+            <th>Yazar</th>
+            <th>Resim</th>
+            <th>Başlık</th>
+            <th>Kategori</th>
+            <th>Yorumlar</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.YAZAR</td>
+                <td>
+                    <img src="@x.RESIM" width="100" />
+                </td>
+                <td>@x.BASLIK</td>
+                <td>@x.Tbl_BlogKategori.AD</td>
+                <td><a href="/Vitrin/BlogYorum/@x.ID" class="btn btn-outline-warning">Yorumlar</a></td>
+                <td>@Html.ActionLink("Sil", "BlogSil", new { id = x.ID }, new { @class = "btn btn-outline-danger", onclick = "return confirm('Blogu Silmek İstediğinize Emin Misiniz?')" })</td>
+                <td><a href="/Vitrin/BlogGetir/@x.ID" class="btn btn-outline-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+</div>

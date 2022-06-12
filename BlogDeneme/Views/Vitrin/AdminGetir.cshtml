@@ -1,0 +1,31 @@
+﻿@model BlogDeneme.Models.Entity.Tbl_Admin
+
+@{
+    ViewBag.Title = "AdminGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AdminGuncelle", "Vitrin", FormMethod.Post))
+{
+    <div>
+        <div class="row">
+            <div>
+                @Html.HiddenFor(x => x.ID)
+            </div>
+            <div class="input-group mb-3 col">
+                <label class="input-group-text text-dark">Kullanıcı Adı:</label>
+                @Html.TextBoxFor(x => x.KULLANICIADI, new { @class = "form-control", @required="required", @placeholder = "En fazla 15 karakter..." })
+            </div>
+            <div class="input-group mb-3 col">
+                <label class="input-group-text text-dark">Parola:</label>
+                @Html.TextBoxFor(x => x.PAROLA, new { @class = "form-control", @required = "required", @placeholder = "En fazla 15 karakter..." })
+            </div>
+        </div>
+
+        <div class="clearfix">
+            <div class="float-right">
+                <button class="btn btn-outline-success">Güncelle</button>
+            </div>
+        </div>
+    </div>
+}

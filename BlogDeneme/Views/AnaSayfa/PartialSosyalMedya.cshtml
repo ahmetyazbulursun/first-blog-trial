@@ -1,0 +1,11 @@
+﻿@using BlogDeneme.Models.Entity
+@model List<Tbl_SosyalMedya>
+
+<div class="col-12 col-sm-4">
+    <div class="top-social-area">
+        @foreach (var x in Model)
+        {
+            <a href="@x.LINK" target="_blank" data-toggle="tooltip" data-placement="bottom" title="@x.AD"><i class="@x.Tbl_SosyalMedyaIkon.IKON" aria-hidden="true"></i></a>
+        }
+    </div>
+</div>

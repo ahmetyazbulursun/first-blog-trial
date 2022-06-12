@@ -1,0 +1,31 @@
+﻿@model BlogDeneme.Models.Entity.Tbl_SosyalMedyaIkon
+
+@{
+    ViewBag.Title = "IkonGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("IkonGuncelle", "Vitrin", FormMethod.Post))
+{
+    <div>
+        <div class="row">
+            <div>
+                @Html.HiddenFor(x => x.ID)
+            </div>
+            <div class="input-group mb-3 col">
+                <label class="input-group-text text-dark">Kategori Adı:</label>
+                @Html.TextBoxFor(x => x.AD, new { @class = "form-control ml-1", @placeholder = "Yazar adı...", @required = "required" })
+            </div>
+            <div class="input-group mb-3 col">
+                <label class="input-group-text text-dark">Kategori Adı:</label>
+                @Html.TextBoxFor(x => x.IKON, new { @class = "form-control ml-1", @placeholder = "Yazar adı...", @required="required" })
+            </div>
+        </div>
+
+        <div class="clearfix">
+            <div class="float-right">
+                <button class="btn btn-outline-success">Güncelle</button>
+            </div>
+        </div>
+    </div>
+}

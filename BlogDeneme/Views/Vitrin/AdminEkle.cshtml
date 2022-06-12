@@ -1,0 +1,27 @@
+﻿@model BlogDeneme.Models.Entity.Tbl_Admin
+
+@{
+    ViewBag.Title = "AdminEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<form class="form-group" method="post">
+    <div class="row">
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Kullanıcı Adı:</label>
+            @Html.TextBoxFor(x => x.KULLANICIADI, new { @class = "form-control", @placeholder = "En fazla 15 karakter...", @required="required" })
+        </div>
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Parola:</label>
+            @Html.TextBoxFor(x => x.PAROLA, new { @class = "form-control", @placeholder = "En fazla 15 karakter...", @required = "required" })
+        </div>
+    </div>
+
+    <div class="clearfix">
+        <div class="float-right">
+            <button class="btn btn-outline-info">Admin Ekle</button>
+        </div>
+    </div>
+</form>

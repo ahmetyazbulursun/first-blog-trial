@@ -1,0 +1,76 @@
+﻿@model BlogDeneme.Models.Entity.Tbl_Blog
+
+@{
+    ViewBag.Title = "BlogEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<form class="form-group" method="post">
+    <div class="row">
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Yazar:</label>
+            @Html.TextBoxFor(x => x.YAZAR, new { @class = "form-control ml-1", @placeholder = "Yazar adı...", @required = "required" })
+            @Html.ValidationMessageFor(x => x.YAZAR, "", new { @style = "color: red;", @class = "form-control-text" })
+        </div>
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Resim:</label>
+            @Html.TextBoxFor(x => x.RESIM, new { @class = "form-control ml-3", @placeholder = "Link...", @required = "required" })
+            @Html.ValidationMessageFor(x => x.RESIM, "", new { @style = "color: red;", @class = "form-control-text" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Başlık:</label>
+            @Html.TextBoxFor(x => x.BASLIK, new { @class = "form-control", @placeholder = "Başlık...", @required = "required" })
+            @Html.ValidationMessageFor(x => x.BASLIK, "", new { @style = "color: red;", @class = "form-control-text" })
+        </div>
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Kategori:</label>
+            @Html.DropDownListFor(x => x.Tbl_BlogKategori.ID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control", @placeholder = "Yazar adı..." })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-group mb-3 col">
+            <label class="input-group-text text-dark">Giriş:</label>
+            @Html.TextBoxFor(x => x.BILGILENDIRME, new { @class = "form-control ml-2", @placeholder = "Giriş İçeriği..." })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.TextAreaFor(x => x.ICERIK, new { @class = "form-control", id = "summernote" })
+    </div>
+
+    <div class="clearfix">
+        <div class="float-right">
+            <button class="btn btn-outline-info">Blog Ekle</button>
+        </div>
+    </div>
+</form>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+<script>
+    $('#summernote').summernote({
+        placeholder: 'İçerik...',
+        tabsize: 2,
+        height: 300,
+        width: 1050,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+    });
+</script>

@@ -1,0 +1,66 @@
+﻿@model BlogDeneme.Models.Entity.Tbl_Mesajlar
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ##### Contact Area Start ##### -->
+<section class="contact-area section-padding-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Contact Form Area -->
+            <div class="col-12 col-md-10 col-lg-9">
+                <div class="contact-form">
+                    <h5>Bana Ulaşın</h5>
+                    <!-- Contact Form -->
+                    <form method="post">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="group">
+                                    <input type="text" name="ADSOYAD" id="name" required>
+                                    @Html.ValidationMessageFor(x => x.ADSOYAD, "", new { style = "color:red;" })
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Ad-Soyad</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="group">
+                                    <input type="email" name="MAIL" id="email" required>
+                                    @Html.ValidationMessageFor(x => x.MAIL, "", new { style = "color:red;" })
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Mail</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="group">
+                                    <input type="text" name="KONU" id="subject" required>
+                                    @Html.ValidationMessageFor(x => x.KONU, "", new { style = "color:red;" })
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Konu</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="group">
+                                    <textarea name="MESAJ" id="message" required></textarea>
+                                    @Html.ValidationMessageFor(x => x.MESAJ, "", new { style = "color:red;" })
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Mesaj</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn original-btn">Mesaj Gönder</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.Action("PartialGaleri", "iletisim")

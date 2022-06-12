@@ -1,0 +1,27 @@
+﻿@model BlogDeneme.Models.Entity.Tbl_Galeri
+
+@{
+    ViewBag.Title = "ResimGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("ResimGuncelle", "Vitrin", FormMethod.Post))
+{
+    <div>
+        <div class="row">
+            <div>
+                @Html.HiddenFor(x => x.ID)
+            </div>
+            <div class="input-group mb-3 col">
+                <label class="input-group-text text-dark">Resim:</label>
+                @Html.TextBoxFor(x => x.RESIM, new { @class = "form-control", @placeholder = "Link(564x564)..." })
+            </div>
+        </div>
+
+        <div class="clearfix">
+            <div class="float-right">
+                <button class="btn btn-outline-success">Güncelle</button>
+            </div>
+        </div>
+    </div>
+}

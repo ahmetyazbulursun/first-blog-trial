@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ##### Breadcumb Area Start ##### -->
+<div class="breadcumb-area bg-img" style="background-image: url(/tema/img/bg-img/b1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content text-center">
+                    <h2>Hakkımda</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Action("PartialBilgiler", "Hakkimda")
+
+@Html.Action("PartialGaleri", "Hakkimda")

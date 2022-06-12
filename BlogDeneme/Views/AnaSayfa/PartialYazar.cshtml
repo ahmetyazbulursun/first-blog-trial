@@ -1,0 +1,17 @@
+﻿@using BlogDeneme.Models.Entity
+@model List<Tbl_Yazar>
+
+<div class="blog-post-author mt-100 d-flex">
+    @foreach (var x in Model)
+    {
+        <div class="author-thumbnail">
+            <img src="@x.RESIM" alt="">
+        </div>
+        <div class="author-info">
+            <div class="line"></div>
+            <span class="author-role">Yazar</span>
+            <h4><a href="#" class="author-name">@x.ADSOYAD</a></h4>
+            <p>@x.ICERIK</p>
+        </div>
+    }
+</div>

@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Blog Deneme</title>
+
+    <link rel="stylesheet" href="~/tema/style.css">
+
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';
+        }
+    </style>
+
+    <link rel="icon" type="image/x-icon" href="~/tema/icons8_workspace.ico" />
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preload-content">
+            <div id="original-load"></div>
+        </div>
+    </div>
+
+    <!-- Subscribe Modal -->
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <!-- Breaking News Area -->
+                    <div class="col-12 col-sm-8">
+                        <div class="breaking-news-area">
+                            <div id="breakingNewsTicker" class="ticker">
+                                <ul>
+                                    <li><a>C#</a></li>
+                                    <li><a>ASP.NET</a></li>
+                                    <li><a>MVC</a></li>
+                                    <li><a>ARDUINO</a></li>
+                                    <li><a>XAMARIN</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Top Social Area -->
+
+                    @Html.Action("PartialSosyalMedya", "AnaSayfa")
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Logo Area -->
+        <div class="logo-area text-center">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <a href="/AnaSayfa/Index" class="original-logo"><img src="~/tema/img/core-img/logo.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nav Area -->
+        <div class="original-nav-area" id="stickyNav">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-between">
+
+                        <!-- Subscribe btn -->
+                        <div class="subscribe-btn">
+                            <a href="#" class="btn subscribe-btn" style="visibility:hidden;" data-toggle="modal" data-target="#subsModal">Subscribe</a>
+                        </div>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu" id="originalNav">
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="/AnaSayfa/Index">Ana Sayfa</a></li>
+                                    @Html.Action("BlogKategoriler", "AnaSayfa")
+                                    <li><a href="/Hakkimda/Index">Hakkımda</a></li>
+                                    <li><a href="/iletisim/Index">İletişim</a></li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <br />
+    <!-- ##### Header Area End ##### -->
+
+    @RenderBody()
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- Footer Nav Area -->
+                    <div class="classy-nav-container breakpoint-off">
+                        <!-- Classy Menu -->
+                        <nav class="classy-navbar justify-content-center">
+
+                            <!-- Menu -->
+                            <div class="classy-menu">
+
+                                <!-- close btn -->
+                                <div class="classycloseIcon">
+                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                                </div>
+
+                                <!-- Nav Start -->
+                                <div class="classynav">
+                                    <ul>
+                                        <li><a href="/AnaSayfa/Index">Ana Sayfa</a></li>
+                                        <li><a href="/Hakkimda/Index">Hakkımda</a></li>
+                                        <li><a href="/iletisim/Index">İletişim</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Nav End -->
+                            </div>
+                        </nav>
+                    </div>
+
+                    @Html.Action("PartialFooterSosyalMedya", "AnaSayfa")
+
+                </div>
+            </div>
+        </div>
+
+        Ahmet Hakan Eroğlu &copy;
+        @DateTime.Now.Year Tüm Hakları Saklıdır | Designed By <a href="https://ahmetyazbulursun.com" target="_blank">Ahmet Hakan Eroğlu</a>
+
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="~/tema/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="~/tema/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="~/tema/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="~/tema/js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="~/tema/js/active.js"></script>
+
+</body>
+
+</html>

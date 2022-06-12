@@ -1,0 +1,27 @@
+﻿@using BlogDeneme.Models.Entity
+@model List<Tbl_Yazar>
+
+@{
+    ViewBag.Title = "YazarIslemleri";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+        <tr align="center">
+            <th>Ad-Soyad</th>
+            <th>İçerik</th>
+            <th>Resim</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr align="center">
+                <td>@x.ADSOYAD</td>
+                <td>@x.ICERIK.Substring(0, 15)...</td>
+                <td>@x.RESIM.Substring(0, 15)...</td>
+                <td><a href="/Vitrin/YazarGetir/@x.ID" class="btn btn-outline-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+</div>
