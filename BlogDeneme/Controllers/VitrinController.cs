@@ -40,12 +40,15 @@ namespace BlogDeneme.Controllers
             return View(deger);
         }
 
-        public ActionResult BlogSil(int id)
+        public ActionResult BlogSil(Tbl_Blog p)
         {
-            var deger = db.Tbl_Blog.Find(id);
-            db.Tbl_Blog.Remove(deger);
+            Tbl_Blog t = db.Tbl_Blog.Find(p.ID);
+
+            t.DURUM = false;
+
             db.SaveChanges();
             return RedirectToAction("BlogIslemleri");
+
         }
 
         [HttpGet]
