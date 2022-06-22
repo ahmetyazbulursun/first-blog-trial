@@ -116,7 +116,7 @@ namespace BlogDeneme.Controllers
         public ActionResult Kategori(Tbl_BlogKategori t, int id, int sayfa = 1)
         {
             Tbl_BlogKategori k = db.Tbl_BlogKategori.Find(t.ID);
-            var deger = db.Tbl_Blog.Where(x => x.KATEGORI == id && k.DURUM == true).OrderByDescending(x => x.ID).ToList().ToPagedList(sayfa, 8);
+            var deger = db.Tbl_Blog.Where(x => x.KATEGORI == id && k.DURUM == true && x.DURUM == true).OrderByDescending(x => x.ID).ToList().ToPagedList(sayfa, 8);
             return View(deger);
         }
     }

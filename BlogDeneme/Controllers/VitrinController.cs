@@ -16,7 +16,7 @@ namespace BlogDeneme.Controllers
 
         public ActionResult BlogIslemleri(int sayfa = 1)
         {
-            var deger = db.Tbl_Blog.ToList().Where(x => x.DURUM == true).OrderByDescending(x => x.ID).ToPagedList(sayfa, 6);
+            var deger = db.Tbl_Blog.ToList().Where(x => x.DURUM == true).OrderByDescending(x => x.ID).ToPagedList(sayfa, 10);
             return View(deger);
         }
 
